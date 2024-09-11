@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  shutdown: graceful
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
