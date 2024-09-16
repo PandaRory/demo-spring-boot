@@ -12,8 +12,8 @@ public class GracefulShutdownListener implements ApplicationListener<ContextClos
 
     @Override
     public void onApplicationEvent(ContextClosedEvent event) {
-        logger.info("SIGTERM received in application shutdown event");
+        logger.info("Signal received in application shutdown event");
         SleepTimer.start(2000);
-        logger.info("Processed SIGTERM in application shutdown event");
+        logger.info("Processed Signal in application shutdown event");
     }
 }

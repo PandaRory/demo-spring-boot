@@ -18,16 +18,16 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-			logger.info("SIGTERM received in shutdown hook");
+			logger.info("Signal received in shutdown hook");
 			SleepTimer.start(5000);
-			logger.info("Processed SIGTERM in shutdown hook");
+			logger.info("Processed signal in shutdown hook");
         }));
 	}
 
 	@PreDestroy
 	public void tearDown() {
-		logger.info("tearDown start");
+		logger.info("PreDestroy start");
 		SleepTimer.start(10000);
-		logger.info("tearDown end");
+		logger.info("PreDestroy end");
 	}
 }
